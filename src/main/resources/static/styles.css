@@ -1,0 +1,166 @@
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    margin: 0;
+    padding: 0px 20px;
+}
+
+h1, h2, h3 {
+    color: #1a1a1a;
+    font-weight: 600;
+    text-align: center;
+}
+
+a {
+    color: #007bff;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
+
+th, td {
+    padding: 14px;
+    text-align: left;
+}
+
+th {
+    background-color: #eef1f6;
+    color: #333;
+    font-weight: 600;
+    border-bottom: 1px solid #ddd;
+}
+
+td {
+    border-bottom: 1px solid #eee;
+}
+
+tr:hover td {
+    background-color: #f9f9f9;
+}
+
+.btn,
+button,
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn:hover,
+button:hover,
+input[type="submit"]:hover {
+    background-color: #005fcc;
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background-color: #555;
+    text-decoration: none;
+}
+
+.btn-secondary:hover {
+    background-color: #333;
+    text-decoration: none;
+}
+
+form {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin: 0 auto;
+    max-width: 520px;
+}
+
+label {
+    font-weight: 600;
+    margin-top: 10px;
+    display: block;
+    color: #222;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #007bff;
+}
+
+.detail-card {
+    background: white;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 600px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+}
+
+.detail-item {
+    margin-bottom: 15px;
+    padding: 12px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.label {
+    font-weight: 600;
+    color: #444;
+}
+
+.actions {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.actions .btn {
+    margin: 8px;
+    text-decoration: none;
+}
+
+@media (max-width: 480px) {
+    .detail-item {
+        flex-direction: column;
+        gap: 5px;
+        align-items: flex-start;
+    }
+}

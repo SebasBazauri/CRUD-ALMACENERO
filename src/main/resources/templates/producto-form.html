@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${producto.idProducto} != null ? 'Editar Producto' : 'Nuevo Producto'"></title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+<div class="container">
+    <div class="detail-card">
+
+        <h2 class="form-title"
+            th:text="${producto.idProducto} != null ? 'Editar Producto' : 'Nuevo Producto'">
+        </h2>
+
+        <form th:action="@{/productos}" method="post" th:object="${producto}" class="form">
+
+            <!-- Hidden ID -->
+            <input type="hidden" th:field="*{idProducto}"/>
+
+            <div class="form-group">
+                <label>Nombre:</label>
+                <input type="text" th:field="*{nombre}" required>
+            </div>
+
+            <div class="form-group">
+                <label>Descripción:</label>
+                <input type="text" th:field="*{descripcion}" required>
+            </div>
+
+            <div class="form-group">
+                <label>Categoría:</label>
+                <input type="text" th:field="*{categoria}" required>
+            </div>
+
+            <div class="form-group">
+                <label>Precio Compra:</label>
+                <input type="number" step="0.01" th:field="*{precioCompra}" required>
+            </div>
+
+            <div class="form-group">
+                <label>Precio Venta:</label>
+                <input type="number" step="0.01" th:field="*{precioVenta}" required>
+            </div>
+
+            <div class="form-group">
+                <label>Stock Actual:</label>
+                <input type="number" th:field="*{stockActual}" required>
+            </div>
+
+            <div class="actions">
+                <button type="submit" class="btn">Guardar</button>
+                <a href="/productos" class="btn btn-secondary">Cancelar</a>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>

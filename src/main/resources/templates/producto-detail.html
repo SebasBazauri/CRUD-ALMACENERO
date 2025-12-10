@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle del Producto</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+<div class="container">
+    <div class="detail-card">
+
+        <h2>Detalle del Producto</h2>
+
+        <div th:if="${producto == null}">
+            <p>No se encontró el producto solicitado.</p>
+            <div class="actions">
+                <a href="/productos" class="btn">Volver</a>
+            </div>
+        </div>
+
+        <div th:if="${producto != null}">
+
+            <div class="detail-item">
+                <span class="label">ID:</span>
+                <span th:text="${producto.idProducto}"></span>
+            </div>
+
+            <div class="detail-item">
+                <span class="label">Nombre:</span>
+                <span th:text="${producto.nombre}"></span>
+            </div>
+
+            <div class="detail-item">
+                <span class="label">Categoría:</span>
+                <span th:text="${producto.categoria}"></span>
+            </div>
+
+            <div class="detail-item">
+                <span class="label">Stock Actual:</span>
+                <span th:text="${producto.stockActual}"></span>
+            </div>
+
+            <div class="detail-item">
+                <span class="label">Precio Compra:</span>
+                <span>S/ <span th:text="${producto.precioCompra}"></span></span>
+            </div>
+
+            <div class="detail-item">
+                <span class="label">Precio Venta:</span>
+                <span>S/ <span th:text="${producto.precioVenta}"></span></span>
+            </div>
+
+            <div class="detail-item">
+                <span class="label">Descripción:</span>
+                <span th:text="${producto.descripcion}"></span>
+            </div>
+
+            <div class="actions">
+                <a th:href="@{'/productos/editar/' + ${producto.idProducto}}" class="btn">Editar</a>
+
+                <a th:href="@{'/productos/eliminar/' + ${producto.idProducto}}"
+                   class="btn btn-secondary"
+                   onclick="return confirm('¿Estás seguro de eliminar este producto?');">
+                    Eliminar
+                </a>
+
+                <a href="/productos" class="btn">Volver</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

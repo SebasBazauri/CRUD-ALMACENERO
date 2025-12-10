@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Productos</title>
+    <style>
+        table, th, td { border: 1px solid black; border-collapse: collapse; padding: 8px; }
+        th { background-color: #eee; }
+    </style>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <h2>Listado de Productos</h2>
+
+    <a th:href="@{/productos/nuevo}" class="btn">➕ Nuevo Producto</a>
+    <br><br>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Categoría</th>
+                <th>Precio Compra</th>
+                <th>Precio Venta</th>
+                <th>Stock</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr th:each="p : ${producto}">
+                <td th:text="${p.idProducto}"></td>
+                <td th:text="${p.nombre}"></td>
+                <td th:text="${p.descripcion}"></td>
+                <td th:text="${p.categoria}"></td>
+                <td th:text="${p.precioCompra}"></td>
+                <td th:text="${p.precioVenta}"></td>
+                <td th:text="${p.stockActual}"></td>
+
+                <td>
+                    <a th:href="@{'/productos/editar/' + ${p.idProducto}}">✏ Editar</a>
+                    |
+                    <a th:href="@{'/productos/eliminar/' + ${p.idProducto}}"
+                       onclick="return confirm('¿Seguro que deseas eliminarlo?')">🗑 Eliminar</a>
+                    |
+                    <a th:href="@{'/productos/detalle/' + ${p.idProducto}}">🔍 Ver</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <a th:href="@{/}" class="btn">Volver al inicio</a>
+
+</body>
+</html>
