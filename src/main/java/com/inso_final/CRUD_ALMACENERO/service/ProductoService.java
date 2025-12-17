@@ -22,6 +22,14 @@ public class ProductoService {
     }
     
     public Producto update(Producto producto) {
+    if (producto.getPrecioCompra() < 0 || producto.getPrecioVenta() < 0) {
+        producto.setPrecioCompra(0);
+        producto.setPrecioVenta(0);
+    }
+    if (producto.getIdProducto() == null) {
+        producto.setStockActual(0);
+    } else {
+    }
         return productoRepository.save(producto);
     }
     
