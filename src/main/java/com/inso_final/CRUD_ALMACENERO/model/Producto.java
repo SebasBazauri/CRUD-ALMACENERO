@@ -20,7 +20,7 @@ public class Producto {
     private String categoria;
     private double precioCompra;
     private double precioVenta;
-    private int stockActual;
+    private int stockActual = 0;
 
     public Integer getIdProducto() {
         return idProducto;
